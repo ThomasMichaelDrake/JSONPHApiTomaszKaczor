@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.jsonphapitomaszkaczor.ui.screens.ExitScreen
 import com.example.jsonphapitomaszkaczor.ui.screens.MainScreen
 import com.example.jsonphapitomaszkaczor.ui.screens.PostDetailScreen
 import com.example.jsonphapitomaszkaczor.ui.screens.UserDetailScreen
@@ -29,5 +30,9 @@ fun NavGraph(
         composable("profile") {
             YourProfileScreen()
         }
+        composable("exit") {
+            ExitScreen(navController = navController)
+        }
+
     }
 }
