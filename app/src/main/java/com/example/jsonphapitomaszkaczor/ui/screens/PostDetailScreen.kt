@@ -13,6 +13,11 @@ import com.example.jsonphapitomaszkaczor.viewmodel.PostDetailViewModelFactory
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
+import com.google.maps.android.compose.GoogleMap
+import com.google.maps.android.compose.rememberCameraPositionState
 
 @Composable
 fun PostDetailScreen(navController: NavController, postId: Int) {
@@ -25,6 +30,7 @@ fun PostDetailScreen(navController: NavController, postId: Int) {
     LaunchedEffect(postId) {
         viewModel.fetchPost(postId)
     }
+
 
     if (isLoading) {
         CircularProgressIndicator()
